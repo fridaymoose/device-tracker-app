@@ -1,0 +1,50 @@
+# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+spring:
+  jmx.enabled: false
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  sql:
+    init:
+      mode: always
+  security:
+    default:
+      username: test-user
+      pwd: test-password
+  circuit:
+    breaker:
+      open:
+        timeout: 1000
+      reset:
+        timeout: 4000
+  retry:
+    backoff:
+      delay: 100
+
+endpoints:
+  metrics.enabled: false
+  dump.enabled: false
+  shutdown.enabled: false
+
+external:
+  api:
+    fonoapi:
+      url: "http://localhost:8909/v1/getdevice"
+
+pull:
+  devices:
+    metadata:
+      initial:
+        delay: 60
+      fixed:
+        delay: 60

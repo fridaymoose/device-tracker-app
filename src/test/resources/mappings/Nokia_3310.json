@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/v1/getdevice",
+    "formParameters": {
+      "brand": {
+        "equalTo": "Nokia"
+      },
+      "device": {
+        "equalTo": "Nokia 3310"
+      }
+    }
+  },
+
+  "response": {
+    "status": 200,
+    "jsonBody": [{
+      "DeviceName": "Nokia 3310",
+      "Brand":  "Nokia",
+      "technology": "GSM",
+      "_2g_bands": "GSM 900 / 1800",
+      "_3g_bands": "No",
+      "_4g_bands": "No"
+    }],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

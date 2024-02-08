@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/v1/getdevice",
+    "formParameters": {
+      "brand": {
+        "equalTo": "Nokia"
+      },
+      "device": {
+        "equalTo": "http 401"
+      }
+    }
+  },
+
+  "response": {
+    "status": 401,
+    "body": ""
+  }
+}

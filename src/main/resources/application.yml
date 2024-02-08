@@ -1,0 +1,35 @@
+# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+spring:
+  jmx.enabled: false
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  security:
+    default:
+      username: ${APP_USER}
+      pwd: ${APP_PWD}
+
+endpoints:
+  metrics.enabled: false
+  dump.enabled: false
+  shutdown.enabled: false
+
+external:
+  api:
+    fonoapi:
+      url: "https://fonoapi-wiremock-dot-photo-371920.lm.r.appspot.com/v1/getdevice"
+
+pull:
+  devices:
+    metadata:
+      initial:
+        delay: 1
+      fixed:
+        delay: 10
